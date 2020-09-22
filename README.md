@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - Popular-Dishes: Anna https://github.com/TKOut-HRSF130/popular-dishes-service
+  - Bookings Service: Johnny https://github.com/TKOut-HRSF130/bookings-service
+  - Reviews Service: Mataeux https://github.com/TKOut-HRSF130/reviews-service
 
 
 ## Table of Contents
