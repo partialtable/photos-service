@@ -1,12 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello from App component</h1>
-    </div>
-  )
-}
+const App = () => (
+  <div>
+    <h1>Hello from App component</h1>
+  </div>
+);
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
