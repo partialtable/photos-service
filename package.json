@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "nodemon server/server.js",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -28,6 +29,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.1",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "jest": "^26.4.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
