@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 
 app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
+app.get(`/api/restaurants/photos/?${id}`, )
+
 app.listen(port, () => {
   console.log(`Photos-Gallery App Listening on Port http://localhost:${port}`);
 });
