@@ -18,8 +18,13 @@ const myWordList = [
   'pie', 'bar', 'beer', 'crab legs', 'kitchen',
   'service', 'small plates', 'portions',
 ];
-const randomWord = faker.random.arrayElement(myWordList);
-const randomDescription = randomWord + randomWord + randomWord + randomWord;
+const randomDescription1 = `${faker.random.arrayElement(myWordList)}  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
+const randomDescription2 = `${faker.random.arrayElement(myWordList)}  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
+const randomDescription3 = `${faker.random.arrayElement(myWordList)}  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
+const randomDescription4 = `${faker.random.arrayElement(myWordList)}  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
+
+const possibleDescriptions = [randomDescription1, randomDescription2,
+  randomDescription3, randomDescription4];
 
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
@@ -42,7 +47,7 @@ const seeder = () => {
     const photoData = {
       photo_id: i,
       photo_path: randomPhotoUrl,
-      photo_description: 'test',
+      photo_description: faker.random.arrayElement(possibleDescriptions),
       photo_date: faker.date.past(),
       photo_category: faker.random.arrayElement(categories),
       user_id: faker.random.number(),
