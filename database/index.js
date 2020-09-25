@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/photo-gallery');
+mongoose.connect('mongodb://localhost/photo-gallery');
 
 const db = mongoose.connection;
 
@@ -23,6 +23,7 @@ const photosSchema = mongoose.Schema({
 const PhotosModel = mongoose.model('Photos', photosSchema);
 
 // const getAllPhotos = () => { Photos.find({}).exec(); };
+// getAllPhotos();
 
 module.exports = {
   PhotosModel,

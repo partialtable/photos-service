@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const model = require('./index.js');
 
-mongoose.connect('mongodb://localhost/photo_gallery');
+// mongoose.connect('mongodb://localhost/photo_gallery');
 
 const Photos = model.PhotosModel;
 
@@ -18,6 +18,8 @@ const myWordList = [
   'pie', 'bar', 'beer', 'crab legs', 'kitchen',
   'service', 'small plates', 'portions',
 ];
+const randomWord = faker.random.arrayElement(myWordList);
+const randomDescription = randomWord + randomWord + randomWord + randomWord;
 
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
@@ -36,19 +38,19 @@ const randomAvatarIndex = getRandomIntInclusive(0, 12);
 const randomAvatarUrl = `${avatarUrl}${randomAvatarIndex}.png`;
 
 const seeder = () => {
-  for (let i = 1; i <= 100; i += 1) {
+  for (let i = 1; i <= 40; i += 1) {
     const photoData = {
       photo_id: i,
       photo_path: randomPhotoUrl,
-      photo_description: faker.lorem.sentence(myWordList),
+      photo_description: 'test',
       photo_date: faker.date.past(),
       photo_category: faker.random.arrayElement(categories),
-      user_id: faker.random.uuid(),
+      user_id: faker.random.number(),
       user_avatar_path: randomAvatarUrl,
     };
     const photos = new Photos(photoData);
     photos.save(() => {
-      if (i === 100) {
+      if (i === 40) {
         mongoose.disconnect();
       }
     });
