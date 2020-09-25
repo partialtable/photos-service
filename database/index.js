@@ -1,14 +1,12 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
-const faker = require('faker');
 
-mongoose.connect('mongodb://localhost/photo-gallery');
-
-const db = mongoose.connection;
+// mongoose.connect('mongodb://localhost/photo-gallery');
 
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', () => {
   console.log('Successful connection to MongoDB!');
 });
 
@@ -23,6 +21,8 @@ const photosSchema = mongoose.Schema({
 });
 
 const PhotosModel = mongoose.model('Photos', photosSchema);
+
+// const getAllPhotos = () => { Photos.find({}).exec(); };
 
 module.exports = {
   PhotosModel,
