@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 const faker = require('faker');
@@ -83,18 +84,16 @@ const generatePhotosArray = () => {
       user_avatar_path: randomAvatarUrl,
     });
   }
-  // console.log('Results array of photos: ', result);
   return result;
 };
 
+// eslint-disable-next-line no-unused-vars
 const seedData = () => {
   const photos = [];
   for (let i = 1; i <= 100; i += 1) {
     const photoObj = {};
     photoObj.photos = generatePhotosArray();
-    // console.log(photoObj.photos);
     photos.push(photoObj);
-    // console.log(photos);
     const restaurantData = new RestaurantModel(photos);
     restaurantData.restaurant_id = i;
     restaurantData.name = `${faker.name.firstName()}'s ${faker.random.arrayElement(restaurantNames)}`;
@@ -108,9 +107,11 @@ const seedData = () => {
 
 // seedData();
 
-// const gatherPhotos = () => { RestaurantModel.find({}).exec(); };
+const gatherPhotos = () => {
+  return RestaurantModel.find({}).exec();
+};
 
 module.exports = {
   RestaurantModel,
-  // gatherPhotos,
+  gatherPhotos,
 };
