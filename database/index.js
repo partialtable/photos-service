@@ -11,26 +11,6 @@ db.once('open', () => {
   console.log('Successful connection to MongoDB!');
 });
 
-// const photosSchema = mongoose.Schema({
-//   photo_id: Number,
-//   photo_path: String,
-//   photo_description: String,
-//   photo_date: Date,
-//   photo_category: String,
-//   user_id: Number,
-//   user_avatar_path: String,
-// });
-
-// const PhotosModel = mongoose.model('Photos', photosSchema);
-
-// const getAllPhotos = () => { Photos.find({}).exec(); };
-// getAllPhotos();
-
-// // export get requests
-// module.exports = {
-//   PhotosModel,
-// };
-
 const RestaurantSchema = mongoose.Schema({
   name: String,
   restaurant_id: Number,
@@ -126,6 +106,11 @@ const seedData = () => {
   }
 };
 
-seedData();
+// seedData();
 
-module.exports.RestaurantModel = RestaurantModel;
+// const gatherPhotos = () => { RestaurantModel.find({}).exec(); };
+
+module.exports = {
+  RestaurantModel,
+  // gatherPhotos,
+};
