@@ -32,9 +32,10 @@ db.once('open', () => {
 // };
 
 const RestaurantSchema = mongoose.Schema({
+  name: String,
   restaurant_id: Number,
   photos: [Object],
-});
+}, { versionKey: false });
 
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
 
@@ -51,6 +52,11 @@ const myWordList = [
   'large parties', 'comfortable', 'delicious',
   'greasy', 'televisions', 'bar seating', 'quiet',
   'vibrant', 'outdoor seating', 'aroma', 'open kitchen',
+];
+
+const restaurantNames = [
+  'Grill', 'Bar', 'Steakhouse',
+  'Villa', 'Seafood', 'Pizza',
 ];
 
 const randomDescription1 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
@@ -97,7 +103,7 @@ const generatePhotosArray = () => {
       user_avatar_path: randomAvatarUrl,
     });
   }
-  console.log('Results array of photos: ', result);
+  // console.log('Results array of photos: ', result);
   return result;
 };
 
@@ -111,6 +117,7 @@ const seedData = () => {
     // console.log(photos);
     const restaurantData = new RestaurantModel(photos);
     restaurantData.restaurant_id = i;
+    restaurantData.name = `${faker.name.firstName()}'s ${faker.random.arrayElement(restaurantNames)}`;
     restaurantData.save(() => {
       if (i === 100) {
         mongoose.disconnect();
