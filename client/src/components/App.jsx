@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import Header from './Header.jsx';
+import Categorylist from './CategoryList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
 
       <div>
         <Header />
+        <Categorylist />
       </div>
     );
   }
