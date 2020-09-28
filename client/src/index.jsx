@@ -1,10 +1,6 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const App = () => (
-  <div>
-    <h1>Hello from App component</h1>
-  </div>
-);
+import App from './components/App.jsx';
 
 ReactDOM.render(<App />, document.getElementById('app'));
