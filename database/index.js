@@ -60,6 +60,18 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+const getRandomPhotoUrl = () => {
+  const bucketUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/';
+  const photoEndpoint = getRandomIntInclusive(0, 40).toString();
+  return `${bucketUrl}${photoEndpoint}.png`;
+};
+
+const getRandomAvatarUrl = () => {
+  const bucketUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Avatar_Images/';
+  const photoEndpoint = getRandomIntInclusive(0, 12).toString();
+  return `${bucketUrl}${photoEndpoint}.png`;
+};
+
 const randomPhotoIndex = getRandomIntInclusive(0, 40);
 
 const randomPhotoUrl = `${photoUrl}${randomPhotoIndex}.png`;
@@ -74,12 +86,12 @@ const generatePhotosArray = () => {
   for (let i = 1; i < length; i += 1) {
     result.push({
       photo_id: i,
-      url_path: randomPhotoUrl,
+      url_path: getRandomPhotoUrl(),
       description: faker.random.arrayElement(possibleDescriptions),
       date: faker.date.past(),
       category: faker.random.arrayElement(categories),
       user_id: faker.random.number(),
-      user_avatar_path: randomAvatarUrl,
+      user_avatar_path: getRandomAvatarUrl(),
     });
   }
   return result;

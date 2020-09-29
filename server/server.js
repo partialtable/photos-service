@@ -18,8 +18,21 @@ app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 app.get('/api/restaurants/', (req, res) => {
   db.gatherPhotos()
     .then((response) => {
-      console.log(response.data);
+      // console.log(response);
       res.status(200).send(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.get('/api/restaurants/photos', (req, res) => {
+  db.gatherPhotos()
+    .then((response) => {
+      const result = response.map((restaurant) => {
+        return (restaurant.photos);
+      });
+      res.status(200).send(result);
     })
     .catch((err) => {
       console.log(err);
