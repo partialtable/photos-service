@@ -3,7 +3,6 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
-// import CategoryListEntry from './CategoryListEntry.jsx';
 
 const FilterByCategoryList = styled.ul`
   border-bottom: 1px solid #d8d9db;
@@ -63,26 +62,3 @@ const CategoryList = () => {
 };
 
 export default CategoryList;
-
-// const categoriesArray = [
-//   // {
-//   //   name: 'All',
-//   // },
-//   {
-//     name: 'Food',
-//   },
-//   {
-//     name: 'Drink',
-//   },
-//   {
-//     name: 'Atmosphere',
-//   },
-// ];
-// const mappedCategories = categoriesArray.map((category, key) => {
-//   return (
-//     <CategoryListEntry
-//       name={category.name}
-//       key={`${category.name} ${key}`}
-//     />
-//   );
-// });
