@@ -3,20 +3,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CateogryListEntries = styled.li`
+const StyledList = styled.li`
+  display: inline;
   font-family: Helvetica, Arial, sans-serif;
+`;
+
+const CateogryListButtons = styled.button`
   font-size: 14px;
-  font-weight: 500;
+  color: #2d333f;
+  border: none;
+  background-color: transparent;
+  font-weight: 535;
+  line-height: 1.15;
   margin-right: 16px;
   padding: 16px 0;
-  display: inline;
 `;
 
 const CategoryListEntry = ({ name }) => {
   return (
-    <CateogryListEntries>
-      {name}
-    </CateogryListEntries>
+    <StyledList>
+      <CateogryListButtons>
+        {name}
+      </CateogryListButtons>
+    </StyledList>
   );
 };
 
