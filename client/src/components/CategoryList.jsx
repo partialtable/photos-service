@@ -14,9 +14,9 @@ const FilterByCategoryList = styled.ul`
 
 const CategoryList = () => {
   const categoriesArray = [
-    {
-      name: 'All',
-    },
+    // {
+    //   name: 'All',
+    // },
     {
       name: 'Food',
     },

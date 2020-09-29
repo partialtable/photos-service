@@ -9,6 +9,9 @@ describe('<App />', () => {
   it('should render an unordered list to the page', () => {
     expect(wrapper.find('ul')).toExist();
   });
+  it('should render buttons to the page', () => {
+    expect(wrapper.find('button')).toExist();
+  });
   it('should not have an a span on the page', () => {
     expect(wrapper.find('span')).not.toExist();
   });
