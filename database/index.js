@@ -20,10 +20,6 @@ const RestaurantSchema = mongoose.Schema({
 
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
 
-const photoUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/';
-
-const avatarUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Avatar_Images/';
-
 const myWordList = [
   'seafood', 'sushi', 'cocktails',
   'desserts', 'wafer', 'bar scene',
@@ -71,14 +67,6 @@ const getRandomAvatarUrl = () => {
   const photoEndpoint = getRandomIntInclusive(0, 12).toString();
   return `${bucketUrl}${photoEndpoint}.png`;
 };
-
-const randomPhotoIndex = getRandomIntInclusive(0, 40);
-
-const randomPhotoUrl = `${photoUrl}${randomPhotoIndex}.png`;
-
-const randomAvatarIndex = getRandomIntInclusive(0, 12);
-
-const randomAvatarUrl = `${avatarUrl}${randomAvatarIndex}.png`;
 
 const generatePhotosArray = () => {
   const result = [];
