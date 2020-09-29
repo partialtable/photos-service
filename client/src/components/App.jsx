@@ -15,8 +15,8 @@ class App extends React.Component {
     return (
 
       <div>
-        <Header />
-        <Categorylist />
+        <Header className="header" />
+        <Categorylist className="categories" />
       </div>
     );
   }
