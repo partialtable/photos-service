@@ -3,7 +3,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
-import CategoryListEntry from './CategoryListEntry.jsx';
+// import CategoryListEntry from './CategoryListEntry.jsx';
 
 const FilterByCategoryList = styled.ul`
   border-bottom: 1px solid #d8d9db;
@@ -12,35 +12,77 @@ const FilterByCategoryList = styled.ul`
   margin-bottom: 12px;
 `;
 
-const CategoryList = () => {
-  const categoriesArray = [
-    // {
-    //   name: 'All',
-    // },
-    {
-      name: 'Food',
-    },
-    {
-      name: 'Drink',
-    },
-    {
-      name: 'Atmosphere',
-    },
-  ];
-  const mappedCategories = categoriesArray.map((category, key) => {
-    return (
-      <CategoryListEntry
-        name={category.name}
-        key={`${category.name} ${key}`}
-      />
-    );
-  });
+const StyledList = styled.li`
+  display: inline;
+  font-family: Helvetica, Arial, sans-serif;
+`;
 
+const AllButton = styled.button`
+font-size: 14px;
+color: #2d333f;
+border: none;
+background-color: transparent;
+font-weight: 535;
+line-height: 1.15;
+margin-right: 16px;
+padding: 16px 0;
+border-bottom: 2px solid red;
+
+&:hover {
+  color: red;
+}
+`;
+
+const RemainingButtons = styled.button`
+  font-size: 14px;
+  color: #2d333f;
+  border: none;
+  background-color: transparent;
+  font-weight: 535;
+  line-height: 1.15;
+  margin-right: 16px;
+  padding: 16px 0;
+
+  &:hover {
+    color: red;
+    border-bottom: 2px solid red;
+  }
+`;
+
+const CategoryList = () => {
   return (
     <FilterByCategoryList>
-      {mappedCategories}
+      <StyledList>
+        <AllButton>All</AllButton>
+        <RemainingButtons>Food</RemainingButtons>
+        <RemainingButtons>Drink</RemainingButtons>
+        <RemainingButtons>Atmosphere</RemainingButtons>
+      </StyledList>
     </FilterByCategoryList>
   );
 };
 
 export default CategoryList;
+
+// const categoriesArray = [
+//   // {
+//   //   name: 'All',
+//   // },
+//   {
+//     name: 'Food',
+//   },
+//   {
+//     name: 'Drink',
+//   },
+//   {
+//     name: 'Atmosphere',
+//   },
+// ];
+// const mappedCategories = categoriesArray.map((category, key) => {
+//   return (
+//     <CategoryListEntry
+//       name={category.name}
+//       key={`${category.name} ${key}`}
+//     />
+//   );
+// });
