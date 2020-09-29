@@ -18,6 +18,7 @@ app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 app.get('/api/restaurants/', (req, res) => {
   db.gatherPhotos()
     .then((response) => {
+      console.log(response.data);
       res.status(200).send(response);
     })
     .catch((err) => {

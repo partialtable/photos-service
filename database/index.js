@@ -14,7 +14,7 @@ db.once('open', () => {
 
 const RestaurantSchema = mongoose.Schema({
   name: String,
-  restaurant_id: Number,
+  id: Number,
   photos: [Object],
 }, { versionKey: false });
 
@@ -57,9 +57,7 @@ const possibleDescriptions = [randomDescription1, randomDescription2,
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
 function getRandomIntInclusive(min, max) {
-  const minimum = Math.ceil(min);
-  const maximum = Math.floor(max);
-  return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const randomPhotoIndex = getRandomIntInclusive(0, 40);
@@ -72,7 +70,7 @@ const randomAvatarUrl = `${avatarUrl}${randomAvatarIndex}.png`;
 
 const generatePhotosArray = () => {
   const result = [];
-  const length = 5 + Math.floor(Math.random() * (10));
+  const length = 5 + Math.floor(Math.random() * (10 - 5));
   for (let i = 1; i < length; i += 1) {
     result.push({
       photo_id: i,
@@ -87,22 +85,28 @@ const generatePhotosArray = () => {
   return result;
 };
 
+const generateSeedData = () => {
+  const seedData = [];
+  for (let i = 1; i <= 100; i += 1) {
+    const restaurant = {};
+    restaurant.id = i;
+    restaurant.name = `${faker.name.firstName()}'s ${faker.random.arrayElement(restaurantNames)}`;
+    restaurant.photos = generatePhotosArray();
+    seedData.push(restaurant);
+  }
+  return seedData;
+};
+
 // eslint-disable-next-line no-unused-vars
 const seedData = () => {
-  const photos = [];
-  for (let i = 1; i <= 100; i += 1) {
-    const photoObj = {};
-    photoObj.photos = generatePhotosArray();
-    photos.push(photoObj);
-    const restaurantData = new RestaurantModel(photos);
-    restaurantData.restaurant_id = i;
-    restaurantData.name = `${faker.name.firstName()}'s ${faker.random.arrayElement(restaurantNames)}`;
-    restaurantData.save(() => {
-      if (i === 100) {
-        mongoose.disconnect();
-      }
-    });
-  }
+  const dataArray = generateSeedData();
+  RestaurantModel.insertMany(dataArray, (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Successfully inserted Restaurants into MongoDB');
+    }
+  });
 };
 
 // seedData();
