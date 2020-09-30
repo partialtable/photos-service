@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
@@ -14,15 +15,11 @@ db.once('open', () => {
 
 const RestaurantSchema = mongoose.Schema({
   name: String,
-  restaurant_id: Number,
+  id: Number,
   photos: [Object],
 }, { versionKey: false });
 
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
-
-const photoUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/';
-
-const avatarUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Avatar_Images/';
 
 const myWordList = [
   'seafood', 'sushi', 'cocktails',
@@ -57,52 +54,60 @@ const possibleDescriptions = [randomDescription1, randomDescription2,
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
 function getRandomIntInclusive(min, max) {
-  const minimum = Math.ceil(min);
-  const maximum = Math.floor(max);
-  return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const randomPhotoIndex = getRandomIntInclusive(0, 40);
+const getRandomPhotoUrl = () => {
+  const bucketUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/';
+  const photoEndpoint = getRandomIntInclusive(0, 40).toString();
+  return `${bucketUrl}${photoEndpoint}.png`;
+};
 
-const randomPhotoUrl = `${photoUrl}${randomPhotoIndex}.png`;
-
-const randomAvatarIndex = getRandomIntInclusive(0, 12);
-
-const randomAvatarUrl = `${avatarUrl}${randomAvatarIndex}.png`;
+const getRandomAvatarUrl = () => {
+  const bucketUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Avatar_Images/';
+  const photoEndpoint = getRandomIntInclusive(0, 12).toString();
+  return `${bucketUrl}${photoEndpoint}.png`;
+};
 
 const generatePhotosArray = () => {
   const result = [];
-  const length = 5 + Math.floor(Math.random() * (10));
+  const length = 5 + Math.floor(Math.random() * (10 - 5));
   for (let i = 1; i < length; i += 1) {
     result.push({
       photo_id: i,
-      url_path: randomPhotoUrl,
+      url_path: getRandomPhotoUrl(),
       description: faker.random.arrayElement(possibleDescriptions),
       date: faker.date.past(),
       category: faker.random.arrayElement(categories),
       user_id: faker.random.number(),
-      user_avatar_path: randomAvatarUrl,
+      user_avatar_path: getRandomAvatarUrl(),
     });
   }
   return result;
 };
 
+const generateSeedData = () => {
+  const seedData = [];
+  for (let i = 1; i <= 100; i += 1) {
+    const restaurant = {};
+    restaurant.id = i;
+    restaurant.name = `${faker.name.firstName()}'s ${faker.random.arrayElement(restaurantNames)}`;
+    restaurant.photos = generatePhotosArray();
+    seedData.push(restaurant);
+  }
+  return seedData;
+};
+
 // eslint-disable-next-line no-unused-vars
 const seedData = () => {
-  const photos = [];
-  for (let i = 1; i <= 100; i += 1) {
-    const photoObj = {};
-    photoObj.photos = generatePhotosArray();
-    photos.push(photoObj);
-    const restaurantData = new RestaurantModel(photos);
-    restaurantData.restaurant_id = i;
-    restaurantData.name = `${faker.name.firstName()}'s ${faker.random.arrayElement(restaurantNames)}`;
-    restaurantData.save(() => {
-      if (i === 100) {
-        mongoose.disconnect();
-      }
-    });
-  }
+  const dataArray = generateSeedData();
+  RestaurantModel.insertMany(dataArray, (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Successfully inserted Restaurants into MongoDB');
+    }
+  });
 };
 
 // seedData();
@@ -114,4 +119,5 @@ const gatherPhotos = () => {
 module.exports = {
   RestaurantModel,
   gatherPhotos,
+  db,
 };
