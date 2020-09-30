@@ -20,11 +20,11 @@ class ImageContainer extends React.Component {
   }
 
   render() {
-    const { photos } = this.props;
+    const photos = this.props.photos;
     const mappedPhotos = photos.map((photo, key) => {
       return (
         <ImageContainerEntry
-          photo={photo}
+          photoUrl={photo.url_path}
           key={`${photo.photo_id} ${key}`}
         />
       );

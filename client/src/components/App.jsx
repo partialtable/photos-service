@@ -15,20 +15,21 @@ class App extends React.Component {
       restaurant_id: '',
       photos: [],
     };
-    this.getRestaurants = this.getRestaurants.bind(this);
+    this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
   }
 
   componentDidMount() {
-    this.getRestaurants();
+    this.getRestaurantsPhotos();
   }
 
-  getRestaurants() {
+  getRestaurantsPhotos() {
     axios.get('api/restaurants')
       .then((response) => {
-        console.log(response.data);
-        // this.setState({
-        //   photos:
-        // });
+        this.setState({
+          restaurant_name: response.data[0].name,
+          restaurant_id: response.data[0].id,
+          photos: response.data[0].photos,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -53,9 +54,9 @@ class App extends React.Component {
     return (
 
       <div>
-        <Header className="header" />
+        <Header className="header" photos={photos} />
         <Categorylist className="categories" />
-        <ImageContainer photos={photos} getPhotos={this.getPhotos} />
+        <ImageContainer photos={photos} getPhotos={this.getRestaurantsPhotos} />
       </div>
     );
   }
