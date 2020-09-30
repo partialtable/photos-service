@@ -9,6 +9,7 @@ const StyledPhotoList = styled.ul`
   display: block;
   width: 100%;
   overflow: hidden;
+  list-style-type: none;
 `;
 
 class ImageContainer extends React.Component {
