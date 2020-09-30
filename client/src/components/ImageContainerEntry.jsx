@@ -1,16 +1,22 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
+const PhotoListItem = styled.li`
+  list-style-type: none;
+  width: 23%;
+  height: auto:
+`;
+
+const PhotoListAnchor = styled.a`
+
+`;
 
 const ImageContainerEntry = ({ photoUrl }) => {
   return (
-    <li>
-      <a href={`${photoUrl}`} role="button">
-        <div>
-          <img src={`${photoUrl}`} alt=""></img>
-        </div>
-      </a>
-    </li>
+    <PhotoListItem>
+      <img src={`${photoUrl}`} alt=""></img>
+    </PhotoListItem>
   );
 };
 

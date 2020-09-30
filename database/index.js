@@ -119,4 +119,5 @@ const gatherPhotos = () => {
 module.exports = {
   RestaurantModel,
   gatherPhotos,
+  db,
 };

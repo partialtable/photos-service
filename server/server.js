@@ -42,3 +42,8 @@ app.get('/api/restaurants/photos', (req, res) => {
 app.listen(port, () => {
   console.log(`Photos-Gallery App Listening on Port http://localhost:${port}`);
 });
+
+module.exports = {
+  app,
+  express,
+};

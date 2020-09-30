@@ -5,11 +5,10 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageContainerEntry from './ImageContainerEntry.jsx';
 
-const StyledPhotoList = styled.ul`
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  list-style-type: none;
+const PhotoGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 class ImageContainer extends React.Component {
@@ -32,9 +31,9 @@ class ImageContainer extends React.Component {
     });
     return (
       <div>
-        <StyledPhotoList>
+        <PhotoGrid>
           {mappedPhotos}
-        </StyledPhotoList>
+        </PhotoGrid>
       </div>
     );
   }
