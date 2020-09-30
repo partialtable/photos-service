@@ -9,6 +9,15 @@ const PhotoGrid = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex-basis: 100%;
+  flex-basis: calc(33.333% - 20px);
+  cursor: pointer;
+  margin: 10px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 `;
 
 class ImageContainer extends React.Component {
