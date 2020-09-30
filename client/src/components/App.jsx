@@ -11,27 +11,42 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      restaurant_name: '',
+      restaurant_id: '',
       photos: [],
     };
-    this.getPhotos = this.getPhotos.bind(this);
+    this.getRestaurants = this.getRestaurants.bind(this);
   }
 
   componentDidMount() {
-    this.getPhotos();
+    this.getRestaurants();
   }
 
-  getPhotos() {
-    axios.get('/api/restaurants/')
+  getRestaurants() {
+    axios.get('api/restaurants')
       .then((response) => {
         console.log(response.data);
-        this.setState({
-          photos: response.data.photos,
-        });
+        // this.setState({
+        //   photos:
+        // });
       })
       .catch((err) => {
         console.log(err);
       });
   }
+
+  // getPhotos() {
+  //   axios.get('/api/restaurants/photos')
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       this.setState({
+  //         photos: response.data.photos,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
     const { photos } = this.state;
