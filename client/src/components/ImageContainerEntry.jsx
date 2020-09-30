@@ -3,17 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PhotoListItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  margin-right: 7px;
-  margin-bottom: 7px;
-`;
-
-const Image = styled.img`
-  width: 23%;
-  height:45%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const PhotoListAnchor = styled.a`
