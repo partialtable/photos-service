@@ -36,19 +36,6 @@ class App extends React.Component {
       });
   }
 
-  // getPhotos() {
-  //   axios.get('/api/restaurants/photos')
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       this.setState({
-  //         photos: response.data.photos,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
   render() {
     const { photos } = this.state;
     return (
