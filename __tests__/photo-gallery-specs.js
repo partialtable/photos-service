@@ -24,6 +24,6 @@ describe('<App />', () => {
 // describe('<CategoryList />', () => {
 //   const wrapper = mount(<CategoryList />);
 //   it('should have style', () => {
-//     expect(wrapper.find('#all-btn')).toHaveStyle('color', '#2d333f');
+//     expect(wrapper.find('#all-btn')).toHaveText('All');
 //   });
 // });

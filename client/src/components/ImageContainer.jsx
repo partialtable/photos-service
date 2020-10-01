@@ -8,7 +8,7 @@ import ImageContainerEntry from './ImageContainerEntry.jsx';
 const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 34vw);
+  grid-template-rows: repeat(2, 12vw);
   grid-gap: 10px;
 `;
 
@@ -31,11 +31,9 @@ class ImageContainer extends React.Component {
       );
     });
     return (
-      <div>
-        <PhotoGrid>
-          {mappedPhotos}
-        </PhotoGrid>
-      </div>
+      <PhotoGrid>
+        {mappedPhotos}
+      </PhotoGrid>
     );
   }
 }

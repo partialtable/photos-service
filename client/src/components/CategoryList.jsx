@@ -51,7 +51,7 @@ const RemainingButtons = styled.button`
 const CategoryList = () => {
   return (
     <FilterByCategoryList id="cateogry-list">
-      <StyledList>
+      <StyledList id="list">
         <AllButton id="all-btn">All</AllButton>
         <RemainingButtons id="food-btn">Food</RemainingButtons>
         <RemainingButtons id="drink-btn">Drink</RemainingButtons>
