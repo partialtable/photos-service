@@ -15,7 +15,6 @@ class App extends React.Component {
       restaurant_name: '',
       restaurant_id: '',
       photos: [],
-      showModal: false,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
   }
