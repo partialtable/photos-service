@@ -59,7 +59,7 @@ function getRandomIntInclusive(min, max) {
 
 const getRandomPhotoUrl = () => {
   const bucketUrl = 'https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/';
-  const photoEndpoint = getRandomIntInclusive(0, 40).toString();
+  const photoEndpoint = getRandomIntInclusive(1, 40).toString();
   return `${bucketUrl}${photoEndpoint}.png`;
 };
 

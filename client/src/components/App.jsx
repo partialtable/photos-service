@@ -23,13 +23,13 @@ class App extends React.Component {
   }
 
   getRestaurantsPhotos() {
-    axios.get('api/restaurants')
+    axios.get('api/restaurants/')
       .then((response) => {
         console.log(response.data);
         this.setState({
-          restaurant_name: response.data[8].name,
-          restaurant_id: response.data[8].id,
-          photos: response.data[8].photos,
+          restaurant_name: response.data[16].name,
+          restaurant_id: response.data[16].id,
+          photos: response.data[16].photos,
         });
       })
       .catch((err) => {
