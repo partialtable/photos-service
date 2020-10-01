@@ -16,9 +16,9 @@ describe('<App />', () => {
   it('should not have an a span on the page', () => {
     expect(wrapper.find('span')).not.toExist();
   });
-  it('should have state', () => {
-    expect(wrapper).toHaveState('photos');
-  });
+  // it('should have state', () => {
+  //   expect(wrapper).toHaveState('photos');
+  // });
 });
 
 // describe('<CategoryList />', () => {
