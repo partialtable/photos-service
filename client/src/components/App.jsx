@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable import/extensions */
@@ -14,6 +15,7 @@ class App extends React.Component {
       restaurant_name: '',
       restaurant_id: '',
       photos: [],
+      showModal: false,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
   }
@@ -40,7 +42,6 @@ class App extends React.Component {
   render() {
     const { photos } = this.state;
     return (
-
       <div>
         <Header className="header" photos={photos} />
         <Categorylist className="categories" />

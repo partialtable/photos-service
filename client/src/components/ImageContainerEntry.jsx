@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import styled from 'styled-components';
