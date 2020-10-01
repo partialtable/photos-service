@@ -2,26 +2,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PhotoListItem = styled.div`
-  display: flex;
-  width: 23%;
-  height: auto;
-  box-sizing: border-box;
-`;
+const PhotoListItem = styled.li`
+  list-style-type: none;
+  `;
 
 const Image = styled.img`
-  width: 23%;
-  height:45%;
-`;
-
-const PhotoListAnchor = styled.a`
-
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 `;
 
 const ImageContainerEntry = ({ photoUrl }) => {
   return (
     <PhotoListItem>
-      <img src={`${photoUrl}`} alt=""></img>
+      <Image src={`${photoUrl}`} alt="">
+      </Image>
     </PhotoListItem>
   );
 };
