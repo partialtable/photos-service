@@ -50,12 +50,12 @@ const RemainingButtons = styled.button`
 
 const CategoryList = () => {
   return (
-    <FilterByCategoryList>
+    <FilterByCategoryList id="cateogry-list">
       <StyledList>
-        <AllButton>All</AllButton>
-        <RemainingButtons>Food</RemainingButtons>
-        <RemainingButtons>Drink</RemainingButtons>
-        <RemainingButtons>Atmosphere</RemainingButtons>
+        <AllButton id="all-btn">All</AllButton>
+        <RemainingButtons id="food-btn">Food</RemainingButtons>
+        <RemainingButtons id="drink-btn">Drink</RemainingButtons>
+        <RemainingButtons id="atmosphere-btn">Atmosphere</RemainingButtons>
       </StyledList>
     </FilterByCategoryList>
   );

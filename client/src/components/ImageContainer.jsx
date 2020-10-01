@@ -8,7 +8,7 @@ import ImageContainerEntry from './ImageContainerEntry.jsx';
 const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 44vw);
+  grid-template-rows: repeat(2, 34vw);
   grid-gap: 10px;
 `;
 

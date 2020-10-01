@@ -25,6 +25,7 @@ class App extends React.Component {
   getRestaurantsPhotos() {
     axios.get('api/restaurants')
       .then((response) => {
+        console.log(response.data);
         this.setState({
           restaurant_name: response.data[8].name,
           restaurant_id: response.data[8].id,

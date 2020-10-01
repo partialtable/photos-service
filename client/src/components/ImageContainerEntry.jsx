@@ -2,13 +2,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PhotoListItem = styled.div`
-  width: 100%;
-  height: 100%;
+const PhotoListItem = styled.li`
+  width: 25%;
+  height: 25%;
   object-fit: cover;
+  cursor: pointer;
+  list-style-type: none;
 `;
 
-const PhotoListAnchor = styled.a`
+const Image = styled.img`
 
 `;
 
