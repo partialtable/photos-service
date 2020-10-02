@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
@@ -10,7 +11,7 @@ import axios from 'axios';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
 // import ImageContainer from './ImageContainer.jsx';
-import PhotoContainer from './PhotoContainer.jsx';
+import PhotoContainer2 from './PhotoContainer2.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends React.Component {
       ableToRender: false,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   componentDidMount() {
@@ -43,13 +45,21 @@ class App extends React.Component {
       });
   }
 
+  handleImageClick() {
+    console.log('image clicked');
+  }
+
   render() {
     if (this.state.ableToRender) {
       return (
         <div>
           <Header className="header" photos={this.state.photos} />
           <Categorylist className="categories" />
-          <PhotoContainer className="container" photos={this.state.photos} />
+          <PhotoContainer2
+            className="container"
+            photos={this.state.photos}
+            handleClick={this.handleImageClick}
+          />
         </div>
       );
     }

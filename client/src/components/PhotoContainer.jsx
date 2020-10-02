@@ -23,22 +23,22 @@ const PhotoGrid = styled.div`
 const PhotoOne = styled.figure`
   grid-column-start: 1;
   grid-column-end: 2;
+  align-self: self-start;
   grid-row-start: 1;
   grid-row-end: 3;
-  height: 100%;
+  height: 174px;
   width: 100%;
-  justify-items: stretch;
-  align-items: stretch;
+  row-gap: 2px;
 `;
 const PhotoTwo = styled.figure`
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 3;
+  align-self: self-end;
+  grid-row-start: 2;
   grid-row-end: 4;
-  height: 100%;
+  height: 174px;
   width: 100%;
-  justify-items: stretch;
-  align-items: stretch;
+  margin-top: 1px;
 `;
 const PhotoThree = styled.figure`
   grid-area: 1 / 2 / 4 / 3 ;
@@ -88,44 +88,75 @@ const PhotoNine = styled.figure`
   width: 100%;
   justify-items: stretch;
   align-items: stretch;
+  background-color: black;
 `;
 
+const ImageOne = styled.img`
+  width: 100%;
+  height: 174px;;
+  object-fit: cover;
+  cursor: pointer;
+`;
+const ImageTwo = styled.img`
+  width: 100%;
+  height: 174px;
+  object-fit: cover;
+  cursor: pointer;
+`;
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
 `;
+const LastImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: .8;
 
-const PhotoContainer = ({ photos }) => {
+  &:hover{
+    opacity: .4;
+  }
+`;
+const MorePhotosText = styled.div`
+  color: #aaadab;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+`;
+
+const PhotoContainer = ({ photos, handleClick }) => {
   return (
     <PhotoGrid>
       <PhotoOne>
-        <Image src={`${photos[0].url_path}`}></Image>
+        <ImageOne onClick={handleClick} src={`${photos[0].url_path}`}></ImageOne>
       </PhotoOne>
       <PhotoTwo>
-        <Image src={`${photos[1].url_path}`}></Image>
+        <ImageTwo onClick={handleClick} src={`${photos[1].url_path}`}></ImageTwo>
       </PhotoTwo>
       <PhotoThree>
-        <Image src={`${photos[2].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[2].url_path}`}></Image>
       </PhotoThree>
       <PhotoFour>
-        <Image src={`${photos[3].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[3].url_path}`}></Image>
       </PhotoFour>
       <PhotoFive>
-        <Image src={`${photos[4].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[4].url_path}`}></Image>
       </PhotoFive>
       <PhotoSix>
-        <Image src={`${photos[5].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[5].url_path}`}></Image>
       </PhotoSix>
       <PhotoSeven>
-        <Image src={`${photos[6].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[6].url_path}`}></Image>
       </PhotoSeven>
       <PhotoEight>
-        <Image src={`${photos[7].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[7].url_path}`}></Image>
       </PhotoEight>
       <PhotoNine>
-        <Image src={`${photos[8].url_path}`}></Image>
+        <LastImage onClick={handleClick} src={`${photos[8].url_path}`}></LastImage>
+        <MorePhotosText>+91 more</MorePhotosText>
       </PhotoNine>
     </PhotoGrid>
   );
