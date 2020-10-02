@@ -1,3 +1,9 @@
+/* eslint-disable no-console */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable arrow-body-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable-next-line react/self-closing-comp */
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,6 +13,8 @@ const PhotoGrid = styled.div`
   grid-template-rows: repeat(3, 33.333%);
   grid-gap: 2px;
   column-gap: 2px;
+  justify-items: center;
+  align-items: center;
 `;
 
 const PhotoOne = styled.figure`
@@ -44,40 +52,44 @@ const PhotoNine = styled.figure`
 `;
 
 const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
 `;
 
 const PhotoContainer = ({ photos }) => {
-  <PhotoGrid>
-    <PhotoOne>
-      <Image src={`${photos[0].url_path}`}></Image>
-    </PhotoOne>
-    <PhotoTwo>
-      <Image src={`${photos[1].url_path}`}></Image>
-    </PhotoTwo>
-    <PhotoThree>
-      <Image src={`${photos[2].url_path}`}></Image>
-    </PhotoThree>
-    <PhotoFour>
-      <Image src={`${photos[3].url_path}`}></Image>
-    </PhotoFour>
-    <PhotoFive>
-      <Image src={`${photos[4].url_path}`}></Image>
-    </PhotoFive>
-    <PhotoSix>
-      <Image src={`${photos[5].url_path}`}></Image>
-    </PhotoSix>
-    <PhotoSeven>
-      <Image src={`${photos[6].url_path}`}></Image>
-    </PhotoSeven>
-    <PhotoEight>
-      <Image src={`${photos[7].url_path}`}></Image>
-    </PhotoEight>
-    <PhotoNine>
-      <Image src={`${photos[8].url_path}`}></Image>
-    </PhotoNine>
-  </PhotoGrid>
+  return (
+    <PhotoGrid>
+      <PhotoOne>
+        <Image src={`${photos[0].url_path}`}></Image>
+      </PhotoOne>
+      <PhotoTwo>
+        <Image src={`${photos[1].url_path}`}></Image>
+      </PhotoTwo>
+      <PhotoThree>
+        <Image src={`${photos[2].url_path}`}></Image>
+      </PhotoThree>
+      <PhotoFour>
+        <Image src={`${photos[3].url_path}`}></Image>
+      </PhotoFour>
+      <PhotoFive>
+        <Image src={`${photos[4].url_path}`}></Image>
+      </PhotoFive>
+      <PhotoSix>
+        <Image src={`${photos[5].url_path}`}></Image>
+      </PhotoSix>
+      <PhotoSeven>
+        <Image src={`${photos[6].url_path}`}></Image>
+      </PhotoSeven>
+      <PhotoEight>
+        <Image src={`${photos[7].url_path}`}></Image>
+      </PhotoEight>
+      <PhotoNine>
+        <Image src={`${photos[8].url_path}`}></Image>
+      </PhotoNine>
+    </PhotoGrid>
+  );
 };
+
+export default PhotoContainer;
