@@ -11,7 +11,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
-// import ImageContainer from './ImageContainer.jsx';
 import PhotoContainer from './PhotoContainer.jsx';
 
 const Wrapper = styled.div`

@@ -15,26 +15,6 @@ const PhotosHeader = styled.h2`
   border-bottom: 1px solid #d8d9db;
 `;
 
-// class Header extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       imagesNumber: 40,
-//     };
-//   }
-
-//   render() {
-//     const { imagesNumber } = this.state;
-//     return (
-//       <div>
-//         <PhotosHeader>
-//           {imagesNumber} Photos
-//         </PhotosHeader>
-//       </div>
-//     );
-//   }
-// }
-
 const Header = ({ photos }) => {
   const length = photos.length;
   return (
