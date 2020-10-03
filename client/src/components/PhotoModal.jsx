@@ -112,6 +112,8 @@ const CloseButton = styled.button`
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+  font-size: 30px;
+  color: rgb(170, 170, 170);
 `;
 
 const PhotoModal = ({ showModal, toggleModal, photos }) => {
@@ -133,7 +135,7 @@ const PhotoModal = ({ showModal, toggleModal, photos }) => {
             </ScrollerContainer>
           </GalleryScroller>
         </GalleryPopup>
-        <CloseButton onClick={toggleModal}>X</CloseButton>
+        <CloseButton onClick={toggleModal} aria-label="Close">X</CloseButton>
       </GalleryOverlay>
     );
   }
