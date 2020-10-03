@@ -32,50 +32,37 @@ const InnerGrid = styled.div`
   align-items: center;
 `;
 
-const PhotoOne = styled.figure`
+const Photo = styled.figure`
+  height: 100%;
+  width: 100%;
+`;
+
+const PhotoOne = styled(Photo)`
   grid-area: 1 / 1 / 2 / 2 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoTwo = styled.figure`
+const PhotoTwo = styled(Photo)`
   grid-area: 2 / 1 / 3 / 2 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoThree = styled.figure`
+const PhotoThree = styled(Photo)`
   grid-area: 1 / 2 / 3 / 3 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoFour = styled.figure`
+const PhotoFour = styled(Photo)`
 grid-area: 1 / 1 / 2 / 2 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoFive = styled.figure`
+const PhotoFive = styled(Photo)`
   grid-area: 2 / 1 / 3 / 2 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoSix = styled.figure`
+const PhotoSix = styled(Photo)`
 grid-area: 3 / 1 / 4 / 2 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoSeven = styled.figure`
+const PhotoSeven = styled(Photo)`
 grid-area: 1 / 2 / 2 / 3 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoEight = styled.figure`
+const PhotoEight = styled(Photo)`
 grid-area: 2 / 2 / 3 / 3 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoNine = styled.figure`
+const PhotoNine = styled(Photo)`
   grid-area: 3 / 2 / 4 / 3 ;
-  height: 100%;
-  width: 100%;
   background-color: black;
 `;
 
@@ -85,11 +72,7 @@ const Image = styled.img`
   object-fit: cover;
   cursor: pointer;
 `;
-const LastImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
+const LastImage = styled(Image)`
   opacity: .8;
 
   &:hover{

@@ -30,22 +30,17 @@ border-bottom: 2px solid red;
 &:hover {
   color: red;
 }
+&:focus {
+  outline: none;
+}
 `;
 
-const RemainingButtons = styled.button`
-  font-size: 14px;
-  color: #2d333f;
-  border: none;
-  background-color: transparent;
-  font-weight: 535;
-  line-height: 1.15;
-  margin-right: 16px;
-  padding: 16px 0;
-
+const RemainingButtons = styled(AllButton)`
+  border-bottom: none;
   &:hover {
     color: red;
     border-bottom: 2px solid red;
-  }
+}
 `;
 
 const CategoryList = () => {

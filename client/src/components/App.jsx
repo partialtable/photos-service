@@ -32,6 +32,7 @@ class App extends React.Component {
       restaurant_id: '',
       photos: [],
       ableToRender: false,
+      showModal: false,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -58,6 +59,10 @@ class App extends React.Component {
 
   handleImageClick() {
     console.log('image clicked');
+  }
+
+  toggleModal() {
+
   }
 
   render() {
