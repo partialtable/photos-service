@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PhotosHeader = styled.h2`
+  margin: inherit;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: 700;

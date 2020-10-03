@@ -8,10 +8,22 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
 // import ImageContainer from './ImageContainer.jsx';
-import PhotoContainer2 from './PhotoContainer2.jsx';
+import PhotoContainer from './PhotoContainer.jsx';
+
+const Wrapper = styled.div`
+  display: block;
+  max-width: 660px;
+  max-height: 500px;
+  margin: auto;
+  position: relative;
+  top: 0%;
+  bottom: 0%;
+  left: 5%;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +31,7 @@ class App extends React.Component {
     this.state = {
       restaurant_name: '',
       restaurant_id: '',
-      photos: ['https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/13.png'],
+      photos: [],
       ableToRender: false,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
@@ -52,15 +64,15 @@ class App extends React.Component {
   render() {
     if (this.state.ableToRender) {
       return (
-        <div>
+        <Wrapper>
           <Header className="header" photos={this.state.photos} />
           <Categorylist className="categories" />
-          <PhotoContainer2
+          <PhotoContainer
             className="container"
             photos={this.state.photos}
             handleClick={this.handleImageClick}
           />
-        </div>
+        </Wrapper>
       );
     }
     return (
