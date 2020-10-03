@@ -9,6 +9,7 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Modal from 'react-modal';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
 import PhotoContainer from './PhotoContainer.jsx';
@@ -32,10 +33,11 @@ class App extends React.Component {
       restaurant_id: '',
       photos: [],
       ableToRender: false,
-      showModal: false,
+      showModal: true,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -58,14 +60,32 @@ class App extends React.Component {
   }
 
   handleImageClick() {
-    console.log('image clicked');
+    this.toggleModal();
   }
 
   toggleModal() {
-
+    this.setState((prevState) => ({
+      showModal: !prevState.showModal,
+    }));
   }
 
   render() {
+    const { showModal } = this.state;
+    if (showModal) {
+      return (
+        <div>
+          <button type="button" onClick={this.toggleModal}>Open Modal</button>
+          <Modal
+            isOpen={showModal}
+            onRequestClose={this.toggleModal}
+          >
+            <div>My Modal</div>
+            <button type="button" onClick={this.toggleModal}>Close Modal</button>
+          </Modal>
+        </div>
+      );
+    }
+
     if (this.state.ableToRender) {
       return (
         <Wrapper>
