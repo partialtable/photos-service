@@ -5,7 +5,32 @@ import styled from 'styled-components';
 
 import Modal from 'react-modal';
 
-const GalleryModal = styled.div`
+const GalleryOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .9);
+  display: block;
+`;
+
+const GalleryPopup = styled.div`
+  position: absolute;
+  width: 25rem;
+  right: 0;
+  left: 0;
+  top: 200px;
+  margin: auto;
+  border-color: rgba(0,0,0,.0784314);
+  border-style: solid;
+  border-width: .67px;
+  border-radius: 3px;
+  background-color: #fff;
+  padding-bottom: 16px;
+`;
+
+const GalleryScroller = styled.div`
   position: relative;
   width: 660px;
   display: flex;
@@ -76,7 +101,7 @@ const FooterText = styled.div`
 `;
 
 const CloseButton = styled.button`
-  position: absolute
+  position: absolute;
   padding: 25px;
   right: 0;
   top: 20px;
@@ -92,16 +117,24 @@ const CloseButton = styled.button`
 const PhotoModal = ({ showModal, toggleModal, photos }) => {
   if (showModal) {
     return (
-      <div>
-        <button type="button" onClick={toggleModal}>Open Modal</button>
-        <Modal
-          isOpen={showModal}
-          onRequestClose={toggleModal}
-        >
-          <div>My Modal</div>
-          <button type="button" onClick={toggleModal}>Close Modal</button>
-        </Modal>
-      </div>
+      <GalleryOverlay>
+        <GalleryPopup>
+          <GalleryScroller>
+            <ArrowButton type="button" aria-label="Previous Image">Previous</ArrowButton>
+            <ScrollerContainer>
+              <ImageContainer>
+                <Image src={photos[0].url_path}></Image>
+              </ImageContainer>
+              <DescriptionFooter>
+                <div>
+                  <FooterText>{`${photos[3].description} ${photos[3].date}`}</FooterText>
+                </div>
+              </DescriptionFooter>
+            </ScrollerContainer>
+          </GalleryScroller>
+        </GalleryPopup>
+        <CloseButton onClick={toggleModal}>X</CloseButton>
+      </GalleryOverlay>
     );
   }
   return (

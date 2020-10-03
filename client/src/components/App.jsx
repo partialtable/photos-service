@@ -35,6 +35,8 @@ class App extends React.Component {
       photos: [],
       ableToRender: false,
       showModal: false,
+      // photo_description: '',
+      // photo_date: '',
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -49,10 +51,12 @@ class App extends React.Component {
     axios.get('api/restaurants/')
       .then((response) => {
         this.setState({
-          restaurant_name: response.data[16].name,
-          restaurant_id: response.data[16].id,
-          photos: response.data[16].photos,
           ableToRender: true,
+          restaurant_name: response.data[20].name,
+          restaurant_id: response.data[20].id,
+          photos: response.data[20].photos,
+          // photo_description: response.data[20].description,
+          // photo_date: response.data[20].date,
         });
       })
       .catch((err) => {
@@ -65,9 +69,7 @@ class App extends React.Component {
   }
 
   toggleModal() {
-    this.setState({
-      showModal: !this.state.showModal,
-    });
+    this.setState((prevState) => ({ showModal: !prevState.showModal }));
   }
 
   render() {

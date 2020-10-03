@@ -120,7 +120,7 @@ const PhotoContainer = ({ photos, handleClick }) => {
         </PhotoEight>
         <PhotoNine>
           <LastImage onClick={handleClick} src={`${photos[8].url_path}`}></LastImage>
-          <MorePhotosText>+31 more</MorePhotosText>
+          <MorePhotosText onClick={handleClick}>+31 more</MorePhotosText>
         </PhotoNine>
       </InnerGrid>
     </PhotoGrid>
