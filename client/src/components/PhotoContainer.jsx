@@ -53,37 +53,31 @@ const PhotoThree = styled.figure`
   height: 100%;
   width: 100%;
 `;
-// Nested Grid
 const PhotoFour = styled.figure`
 grid-area: 1 / 1 / 2 / 2 ;
 height: 100%;
 width: 100%;
 `;
-// Nested Grid
 const PhotoFive = styled.figure`
   grid-area: 2 / 1 / 3 / 2 ;
   height: 100%;
   width: 100%;
 `;
-// Nested Grid
 const PhotoSix = styled.figure`
 grid-area: 3 / 1 / 4 / 2 ;
 height: 100%;
 width: 100%;
 `;
-// Nested Grid
 const PhotoSeven = styled.figure`
 grid-area: 1 / 2 / 2 / 3 ;
 height: 100%;
 width: 100%;
 `;
-// Nested Grid
 const PhotoEight = styled.figure`
 grid-area: 2 / 2 / 3 / 3 ;
 height: 100%;
 width: 100%;
 `;
-// Nested Grid
 const PhotoNine = styled.figure`
   grid-area: 3 / 2 / 4 / 3 ;
   height: 100%;
@@ -145,7 +139,7 @@ const PhotoContainer = ({ photos, handleClick }) => {
         </PhotoEight>
         <PhotoNine>
           <LastImage onClick={handleClick} src={`${photos[8].url_path}`}></LastImage>
-          {/* <MorePhotosText>+91 more</MorePhotosText> */}
+          <MorePhotosText>+91 more</MorePhotosText>
         </PhotoNine>
       </InnerGrid>
     </PhotoGrid>
