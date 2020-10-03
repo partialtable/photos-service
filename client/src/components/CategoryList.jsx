@@ -5,9 +5,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FilterByCategoryList = styled.ul`
+  padding-inline-start: 0px;
   border-bottom: 1px solid #d8d9db;
   list-style-type: none;
-  margin: 0 0 8px;
   margin-bottom: 12px;
 `;
 
