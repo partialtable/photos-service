@@ -13,6 +13,7 @@ import Modal from 'react-modal';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
 import PhotoContainer from './PhotoContainer.jsx';
+import PhotoModal from './PhotoModal.jsx';
 
 const Wrapper = styled.div`
   display: block;
@@ -33,7 +34,7 @@ class App extends React.Component {
       restaurant_id: '',
       photos: [],
       ableToRender: false,
-      showModal: true,
+      showModal: false,
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -64,28 +65,13 @@ class App extends React.Component {
   }
 
   toggleModal() {
-    this.setState((prevState) => ({
-      showModal: !prevState.showModal,
-    }));
+    this.setState({
+      showModal: !this.state.showModal,
+    });
   }
 
   render() {
-    const { showModal } = this.state;
-    if (showModal) {
-      return (
-        <div>
-          <button type="button" onClick={this.toggleModal}>Open Modal</button>
-          <Modal
-            isOpen={showModal}
-            onRequestClose={this.toggleModal}
-          >
-            <div>My Modal</div>
-            <button type="button" onClick={this.toggleModal}>Close Modal</button>
-          </Modal>
-        </div>
-      );
-    }
-
+    const { showModal, photos } = this.state;
     if (this.state.ableToRender) {
       return (
         <Wrapper>
@@ -93,9 +79,15 @@ class App extends React.Component {
           <Categorylist className="categories" />
           <PhotoContainer
             className="container"
-            photos={this.state.photos}
+            photos={photos}
             handleClick={this.handleImageClick}
           />
+          <PhotoModal
+            showModal={showModal}
+            toggleModal={this.toggleModal}
+            photos={photos}
+          >
+          </PhotoModal>
         </Wrapper>
       );
     }
