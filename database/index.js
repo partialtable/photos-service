@@ -71,7 +71,7 @@ const getRandomAvatarUrl = () => {
 
 const generatePhotosArray = () => {
   const result = [];
-  const length = 11 + Math.floor(Math.random() * (21 - 11));
+  const length = 41;
   for (let i = 1; i < length; i += 1) {
     result.push({
       photo_id: i,

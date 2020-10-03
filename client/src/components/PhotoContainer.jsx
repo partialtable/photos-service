@@ -33,18 +33,12 @@ const InnerGrid = styled.div`
 `;
 
 const PhotoOne = styled.figure`
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: 1 / 1 / 2 / 2 ;
   height: 100%;
   width: 100%;
 `;
 const PhotoTwo = styled.figure`
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-area: 2 / 1 / 3 / 2 ;
   height: 100%;
   width: 100%;
 `;
@@ -103,10 +97,14 @@ const LastImage = styled.img`
   }
 `;
 const MorePhotosText = styled.div`
-  color: #aaadab;
+  color: #bbbdbb;
   position: absolute;
-  bottom: 8px;
+  bottom: 45px;
   right: 16px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 const PhotoContainer = ({ photos, handleClick }) => {
@@ -139,7 +137,7 @@ const PhotoContainer = ({ photos, handleClick }) => {
         </PhotoEight>
         <PhotoNine>
           <LastImage onClick={handleClick} src={`${photos[8].url_path}`}></LastImage>
-          <MorePhotosText>+91 more</MorePhotosText>
+          <MorePhotosText>+31 more</MorePhotosText>
         </PhotoNine>
       </InnerGrid>
     </PhotoGrid>
