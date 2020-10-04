@@ -80,7 +80,7 @@ const LastImage = styled(Image)`
   }
 `;
 const MorePhotosText = styled.div`
-  color: #bbbdbb;
+  color: #a9aba9;
   position: absolute;
   bottom: 45px;
   right: 16px;

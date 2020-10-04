@@ -52,9 +52,9 @@ class App extends React.Component {
       .then((response) => {
         this.setState({
           ableToRender: true,
-          restaurant_name: response.data[20].name,
-          restaurant_id: response.data[20].id,
-          photos: response.data[20].photos,
+          restaurant_name: response.data[21].name,
+          restaurant_id: response.data[21].id,
+          photos: response.data[21].photos,
           // photo_description: response.data[20].description,
           // photo_date: response.data[20].date,
         });
