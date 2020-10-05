@@ -99,8 +99,8 @@ const seedData = () => {
 
 // seedData();
 
-const gatherPhotos = () => {
-  return RestaurantModel.find({ id: 23 }).exec();
+const gatherPhotos = (restaurantId) => {
+  return RestaurantModel.find({ id: restaurantId }).exec();
 };
 
 module.exports = {
