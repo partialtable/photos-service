@@ -44,11 +44,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getRestaurantsPhotos();
+    const restaurant = 21;
+    this.getRestaurantsPhotos(restaurant);
   }
 
-  getRestaurantsPhotos() {
-    axios.get('api/restaurants/?id=21')
+  getRestaurantsPhotos(id) {
+    axios.get('/api/restaurants/photos/?id=21')
       .then((response) => {
         this.setState({
           ableToRender: true,

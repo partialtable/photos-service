@@ -25,7 +25,7 @@ app.get('/api/restaurants/', (req, res) => {
     });
 });
 
-app.get('/api/restaurants/photos/?id=21', (req, res) => {
+app.get('/api/restaurants/photos/:id', (req, res) => {
   db.gatherPhotos()
     .then((response) => {
       const result = response.map((restaurant) => {

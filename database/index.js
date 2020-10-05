@@ -100,7 +100,7 @@ const seedData = () => {
 // seedData();
 
 const gatherPhotos = () => {
-  return RestaurantModel.find({ id: 21 }).exec();
+  return RestaurantModel.find({ id: 23 }).exec();
 };
 
 module.exports = {
