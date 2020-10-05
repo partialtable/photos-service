@@ -22,14 +22,12 @@ const RestaurantSchema = mongoose.Schema({
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
 
 const myWordList = [
-  'seafood', 'sushi', 'cocktails',
-  'desserts', 'wafer', 'bar scene',
-  'sesame', 'pizza', 'patio',
-  'pie', 'bar', 'beer', 'crab legs', 'kitchen',
-  'service', 'small plates', 'portions', 'seating',
-  'large parties', 'comfortable', 'delicious',
-  'greasy', 'televisions', 'bar seating', 'quiet',
-  'vibrant', 'outdoor seating', 'aroma', 'open kitchen',
+  'Tristan Lobster Tails', 'Seared Pork Belly', 'Ahi Tuna Tartare',
+  'Delmonico Steak', 'Baby Lobster', 'Bombay Sapphire Martini',
+  'Fresh Diver Scallops', 'Carrot Cake', 'Prime Beef Sliders',
+  'Alaskan King Crab Legs', 'Cajun Ribeye', 'Iceberg Wedge Salad', 'Key Lime Pie', 'Grouper Sandwich',
+  'Creme Brulee', 'Brussel sprouts', 'Fresh Shucked Corn', 'Prime Rib Philly Cheesesteak',
+  'Stone Crab Claws', 'Carpaccio di Bresaola', 'Lamb Chop Casserole',
 ];
 
 const restaurantNames = [
@@ -76,7 +74,7 @@ const generatePhotosArray = () => {
     result.push({
       photo_id: i,
       url_path: getRandomPhotoUrl(),
-      description: faker.random.arrayElement(possibleDescriptions),
+      description: faker.random.arrayElement(myWordList),
       date: faker.date.past(),
       category: faker.random.arrayElement(categories),
       user_id: faker.random.number(),

@@ -15,8 +15,8 @@ const GalleryOverlay = styled.div`
 
 const GalleryPopup = styled.div`
   position: absolute;
-  width: 25rem;
-  right: 0;
+  width: 30rem;
+  right: 62px;
   left: 0;
   top: 45px;
   margin: auto;
@@ -75,7 +75,7 @@ const LeftScroll = styled.button`
   outline: 0;
   position: absolute;
   top: 50%;
-  left: -10%;
+  left: -5%;
   background-color: transparent;
   border: none;
   background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/left_scroll.svg);
@@ -88,7 +88,7 @@ const RightScroll = styled.button`
   outline: 0;
   position: absolute;
   top: 50%;
-  right: -25%;
+  right: -17%;
   background-color: transparent;
   border: none;
   background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/right_scroll.svg);

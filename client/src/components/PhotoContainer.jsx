@@ -10,7 +10,7 @@ import styled from 'styled-components';
 const PhotoGrid = styled.div`
   display: grid;
   height: 300px;
-  width: 635px;
+  width: 657px;
   position: absolute;
   grid-template-columns: 25% auto 30%;
   grid-template-rows: repeat(2, 50%);
@@ -23,7 +23,7 @@ const PhotoGrid = styled.div`
 const InnerGrid = styled.div`
   grid-area: 1 / 3 / 3 / 4 ;
   display: grid;
-  height: inherit;
+  height: 295px;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(3, 33.333%);
   grid-gap: 2px;
