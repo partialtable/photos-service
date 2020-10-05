@@ -35,20 +35,6 @@ const restaurantNames = [
   'Villa', 'Seafood', 'Pizza',
 ];
 
-const randomDescription1 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
-const randomDescription2 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription3 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription4 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription5 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription6 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription7 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription8 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-
-const possibleDescriptions = [randomDescription1, randomDescription2,
-  randomDescription3, randomDescription4, randomDescription5, randomDescription6,
-  randomDescription7, randomDescription8,
-];
-
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
 function getRandomIntInclusive(min, max) {
