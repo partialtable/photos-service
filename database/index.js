@@ -22,33 +22,17 @@ const RestaurantSchema = mongoose.Schema({
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
 
 const myWordList = [
-  'seafood', 'sushi', 'cocktails',
-  'desserts', 'wafer', 'bar scene',
-  'sesame', 'pizza', 'patio',
-  'pie', 'bar', 'beer', 'crab legs', 'kitchen',
-  'service', 'small plates', 'portions', 'seating',
-  'large parties', 'comfortable', 'delicious',
-  'greasy', 'televisions', 'bar seating', 'quiet',
-  'vibrant', 'outdoor seating', 'aroma', 'open kitchen',
+  'Tristan Lobster Tails', 'Seared Pork Belly', 'Ahi Tuna Tartare',
+  'Delmonico Steak', 'Baby Lobster', 'Bombay Sapphire Martini',
+  'Fresh Diver Scallops', 'Carrot Cake', 'Prime Beef Sliders',
+  'Alaskan King Crab Legs', 'Cajun Ribeye', 'Iceberg Wedge Salad', 'Key Lime Pie', 'Grouper Sandwich',
+  'Creme Brulee', 'Brussel sprouts', 'Fresh Shucked Corn', 'Prime Rib Philly Cheesesteak',
+  'Stone Crab Claws', 'Carpaccio di Bresaola', 'Lamb Chop Casserole',
 ];
 
 const restaurantNames = [
   'Grill', 'Bar', 'Steakhouse',
   'Villa', 'Seafood', 'Pizza',
-];
-
-const randomDescription1 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}`;
-const randomDescription2 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription3 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription4 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)} ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription5 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription6 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription7 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-const randomDescription8 = `${faker.random.arrayElement(myWordList)},  ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}, ${faker.random.arrayElement(myWordList)}`;
-
-const possibleDescriptions = [randomDescription1, randomDescription2,
-  randomDescription3, randomDescription4, randomDescription5, randomDescription6,
-  randomDescription7, randomDescription8,
 ];
 
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
@@ -73,15 +57,18 @@ const generatePhotosArray = () => {
   const result = [];
   const length = 41;
   for (let i = 1; i < length; i += 1) {
-    result.push({
-      photo_id: i,
-      url_path: getRandomPhotoUrl(),
-      description: faker.random.arrayElement(possibleDescriptions),
-      date: faker.date.past(),
-      category: faker.random.arrayElement(categories),
-      user_id: faker.random.number(),
-      user_avatar_path: getRandomAvatarUrl(),
-    });
+    const photosObj = {};
+    photosObj.photo_id = i;
+    photosObj.description = faker.random.arrayElement(myWordList);
+    photosObj.date = faker.date.past();
+    photosObj.category = faker.random.arrayElement(categories);
+    photosObj.user_id = faker.random.number();
+    photosObj.user_avatar_path = getRandomAvatarUrl();
+    const randomUrlPath = getRandomPhotoUrl();
+    if (photosObj[randomUrlPath] === undefined) {
+      photosObj.url_path = randomUrlPath;
+    }
+    result.push(photosObj);
   }
   return result;
 };
@@ -113,7 +100,7 @@ const seedData = () => {
 // seedData();
 
 const gatherPhotos = () => {
-  return RestaurantModel.find({}).exec();
+  return RestaurantModel.find({ id: 23 }).exec();
 };
 
 module.exports = {

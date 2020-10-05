@@ -9,8 +9,8 @@ import styled from 'styled-components';
 
 const PhotoGrid = styled.div`
   display: grid;
-  height: 350px;
-  width: 680px;
+  height: 300px;
+  max-width: 100%;
   position: absolute;
   grid-template-columns: 25% auto 30%;
   grid-template-rows: repeat(2, 50%);
@@ -23,7 +23,7 @@ const PhotoGrid = styled.div`
 const InnerGrid = styled.div`
   grid-area: 1 / 3 / 3 / 4 ;
   display: grid;
-  height: inherit;
+  height: 295px;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(3, 33.333%);
   grid-gap: 2px;
@@ -32,50 +32,37 @@ const InnerGrid = styled.div`
   align-items: center;
 `;
 
-const PhotoOne = styled.figure`
+const Photo = styled.figure`
+  height: 100%;
+  width: 100%;
+`;
+
+const PhotoOne = styled(Photo)`
   grid-area: 1 / 1 / 2 / 2 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoTwo = styled.figure`
+const PhotoTwo = styled(Photo)`
   grid-area: 2 / 1 / 3 / 2 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoThree = styled.figure`
+const PhotoThree = styled(Photo)`
   grid-area: 1 / 2 / 3 / 3 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoFour = styled.figure`
+const PhotoFour = styled(Photo)`
 grid-area: 1 / 1 / 2 / 2 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoFive = styled.figure`
+const PhotoFive = styled(Photo)`
   grid-area: 2 / 1 / 3 / 2 ;
-  height: 100%;
-  width: 100%;
 `;
-const PhotoSix = styled.figure`
+const PhotoSix = styled(Photo)`
 grid-area: 3 / 1 / 4 / 2 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoSeven = styled.figure`
+const PhotoSeven = styled(Photo)`
 grid-area: 1 / 2 / 2 / 3 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoEight = styled.figure`
+const PhotoEight = styled(Photo)`
 grid-area: 2 / 2 / 3 / 3 ;
-height: 100%;
-width: 100%;
 `;
-const PhotoNine = styled.figure`
+const PhotoNine = styled(Photo)`
   grid-area: 3 / 2 / 4 / 3 ;
-  height: 100%;
-  width: 100%;
   background-color: black;
 `;
 
@@ -85,11 +72,7 @@ const Image = styled.img`
   object-fit: cover;
   cursor: pointer;
 `;
-const LastImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
+const LastImage = styled(Image)`
   opacity: .8;
 
   &:hover{
@@ -97,7 +80,7 @@ const LastImage = styled.img`
   }
 `;
 const MorePhotosText = styled.div`
-  color: #bbbdbb;
+  color: #a9aba9;
   position: absolute;
   bottom: 45px;
   right: 16px;
@@ -137,7 +120,7 @@ const PhotoContainer = ({ photos, handleClick }) => {
         </PhotoEight>
         <PhotoNine>
           <LastImage onClick={handleClick} src={`${photos[8].url_path}`}></LastImage>
-          <MorePhotosText>+31 more</MorePhotosText>
+          <MorePhotosText onClick={handleClick}>+31 more</MorePhotosText>
         </PhotoNine>
       </InnerGrid>
     </PhotoGrid>

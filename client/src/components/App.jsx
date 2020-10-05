@@ -9,9 +9,11 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Modal from 'react-modal';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
 import PhotoContainer from './PhotoContainer.jsx';
+import PhotoModal from './PhotoModal.jsx';
 
 const Wrapper = styled.div`
   display: block;
@@ -21,7 +23,7 @@ const Wrapper = styled.div`
   position: relative;
   top: 0%;
   bottom: 0%;
-  left: 5%;
+  left: 0;
 `;
 
 class App extends React.Component {
@@ -32,23 +34,30 @@ class App extends React.Component {
       restaurant_id: '',
       photos: [],
       ableToRender: false,
+      showModal: false,
+      // photo_description: '',
+      // photo_date: '',
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
-    this.getRestaurantsPhotos();
+    const restaurant = 21;
+    this.getRestaurantsPhotos(restaurant);
   }
 
-  getRestaurantsPhotos() {
-    axios.get('api/restaurants/')
+  getRestaurantsPhotos(id) {
+    axios.get('/api/restaurants/photos/?id=21')
       .then((response) => {
         this.setState({
-          restaurant_name: response.data[16].name,
-          restaurant_id: response.data[16].id,
-          photos: response.data[16].photos,
           ableToRender: true,
+          restaurant_name: response.data.name,
+          restaurant_id: response.data.id,
+          photos: response.data.photos,
+          // photo_description: response.data[20].description,
+          // photo_date: response.data[20].date,
         });
       })
       .catch((err) => {
@@ -57,10 +66,15 @@ class App extends React.Component {
   }
 
   handleImageClick() {
-    console.log('image clicked');
+    this.toggleModal();
+  }
+
+  toggleModal() {
+    this.setState((prevState) => ({ showModal: !prevState.showModal }));
   }
 
   render() {
+    const { showModal, photos } = this.state;
     if (this.state.ableToRender) {
       return (
         <Wrapper>
@@ -68,9 +82,15 @@ class App extends React.Component {
           <Categorylist className="categories" />
           <PhotoContainer
             className="container"
-            photos={this.state.photos}
+            photos={photos}
             handleClick={this.handleImageClick}
           />
+          <PhotoModal
+            showModal={showModal}
+            toggleModal={this.toggleModal}
+            photos={photos}
+          >
+          </PhotoModal>
         </Wrapper>
       );
     }
