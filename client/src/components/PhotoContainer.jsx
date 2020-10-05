@@ -9,8 +9,8 @@ import styled from 'styled-components';
 
 const PhotoGrid = styled.div`
   display: grid;
-  height: 350px;
-  width: 680px;
+  height: 300px;
+  width: 635px;
   position: absolute;
   grid-template-columns: 25% auto 30%;
   grid-template-rows: repeat(2, 50%);

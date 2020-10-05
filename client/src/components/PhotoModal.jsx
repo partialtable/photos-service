@@ -3,8 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Modal from 'react-modal';
-
 const GalleryOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -20,7 +18,7 @@ const GalleryPopup = styled.div`
   width: 25rem;
   right: 0;
   left: 0;
-  top: 25px;
+  top: 45px;
   margin: auto;
   border-color: rgba(0,0,0,.0784314);
   border-style: solid;
@@ -28,13 +26,6 @@ const GalleryPopup = styled.div`
   border-radius: 3px;
   background-color: transparent;
   padding-bottom: 16px;
-`;
-
-const GalleryScroller = styled.div`
-  position: relative;
-  width: 660px;
-  display: flex;
-  justify-content: center;
 `;
 
 const ScrollerContainer = styled.div`
@@ -47,8 +38,8 @@ const ScrollerContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,10 +51,6 @@ const Image = styled.img`
   margin: 0 auto;
   align-self: center;
   border-style: none;
-`;
-
-const CloseImage = styled.img`
-  background-image
 `;
 
 const DescriptionFooter = styled.div`
@@ -83,42 +70,30 @@ const FooterText = styled.div`
   line-height: 1.15;
 `;
 
-const ArrowButton = styled.button`
-
-`;
-
-const LeftScroll = styled(ArrowButton)`
+const LeftScroll = styled.button`
   cursor: pointer;
-  max-height: 700px;
-  max-width: 700px;
-  pointer-events: none;
-  color: #2d333f;
   outline: 0;
-  font-size: 1.2rem;
   position: absolute;
   top: 50%;
   left: -10%;
-  font-family: icons;
-  speak: none;
-  font-style: normal;
-  font-weight: 700;
-  font-variant: normal;
-  text-transform: none;
-  line-height; 1;
   background-color: transparent;
-  border: 0;
-  overflow: visible;
-  font-family: Helvetica, sans-serif, arial;
+  border: none;
   background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/left_scroll.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
+  height: 16px;
+  width: 16px;
 `;
-const RightScroll = styled(LeftScroll)`
-  background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/right_scroll.svg);
-  background-size: contain;
+
+const RightScroll = styled.button`
+  cursor: pointer;
+  outline: 0;
   position: absolute;
   top: 50%;
-  right: 10%;
+  right: -25%;
+  background-color: transparent;
+  border: none;
+  background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/right_scroll.svg);
+  height: 16px;
+  width: 16px;
 `;
 
 const CloseButton = styled.button`
@@ -126,6 +101,7 @@ const CloseButton = styled.button`
   padding: 25px;
   right: -20px;
   top: 30px;
+  overflow: visible;
   background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/close_icon.svg);
   background-color: transparent;
   background-repeat: no-repeat;
