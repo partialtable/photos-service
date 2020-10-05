@@ -9,7 +9,6 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import Modal from 'react-modal';
 import Header from './Header.jsx';
 import Categorylist from './CategoryList.jsx';
 import PhotoContainer from './PhotoContainer.jsx';
@@ -31,12 +30,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       restaurant_name: '',
-      restaurant_id: '',
+      restaurant_id: Math.floor(Math.random() * 100),
       photos: [],
       ableToRender: false,
       showModal: false,
-      // photo_description: '',
-      // photo_date: '',
     };
     this.getRestaurantsPhotos = this.getRestaurantsPhotos.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -44,20 +41,22 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const restaurant = 21;
-    this.getRestaurantsPhotos(restaurant);
+    this.getRestaurantsPhotos();
   }
 
-  getRestaurantsPhotos(id) {
-    axios.get('/api/restaurants/photos/?id=23')
+  getRestaurantsPhotos() {
+    axios.get(`api/restaurants/photos/${this.state.restaurant_id}`, {
+      params: {
+        restaurant_id: this.state.restaurant_id,
+      },
+    })
       .then((response) => {
+        console.log(response.data);
         this.setState({
           ableToRender: true,
-          restaurant_name: response.data.name,
-          restaurant_id: response.data.id,
-          photos: response.data.photos,
-          // photo_description: response.data[20].description,
-          // photo_date: response.data[20].date,
+          restaurant_name: response.data[0].name,
+          restaurant_id: response.data[0].id,
+          photos: response.data[0].photos,
         });
       })
       .catch((err) => {
