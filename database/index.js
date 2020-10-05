@@ -57,15 +57,18 @@ const generatePhotosArray = () => {
   const result = [];
   const length = 41;
   for (let i = 1; i < length; i += 1) {
-    result.push({
-      photo_id: i,
-      url_path: getRandomPhotoUrl(),
-      description: faker.random.arrayElement(myWordList),
-      date: faker.date.past(),
-      category: faker.random.arrayElement(categories),
-      user_id: faker.random.number(),
-      user_avatar_path: getRandomAvatarUrl(),
-    });
+    const photosObj = {};
+    photosObj.photo_id = i;
+    photosObj.description = faker.random.arrayElement(myWordList);
+    photosObj.date = faker.date.past();
+    photosObj.category = faker.random.arrayElement(categories);
+    photosObj.user_id = faker.random.number();
+    photosObj.user_avatar_path = getRandomAvatarUrl();
+    const randomUrlPath = getRandomPhotoUrl();
+    if (photosObj[randomUrlPath] === undefined) {
+      photosObj.url_path = randomUrlPath;
+    }
+    result.push(photosObj);
   }
   return result;
 };

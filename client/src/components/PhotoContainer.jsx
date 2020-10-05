@@ -10,7 +10,7 @@ import styled from 'styled-components';
 const PhotoGrid = styled.div`
   display: grid;
   height: 300px;
-  width: 657px;
+  max-width: 100%;
   position: absolute;
   grid-template-columns: 25% auto 30%;
   grid-template-rows: repeat(2, 50%);

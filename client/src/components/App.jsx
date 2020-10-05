@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   position: relative;
   top: 0%;
   bottom: 0%;
-  left: 5%;
+  left: 0;
 `;
 
 class App extends React.Component {
