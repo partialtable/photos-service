@@ -110,6 +110,7 @@ const LeftScroll = styled(ArrowButton)`
   overflow: visible;
   font-family: Helvetica, sans-serif, arial;
   background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/left_scroll.svg);
+  background-repeat: no-repeat;
   background-size: contain;
 `;
 const RightScroll = styled(LeftScroll)`
@@ -123,11 +124,12 @@ const RightScroll = styled(LeftScroll)`
 const CloseButton = styled.button`
   position: absolute;
   padding: 25px;
-  right: 18px;
+  right: -20px;
   top: 30px;
   background: url(https://hrsf130-tkout-photo-gallery.s3.us-east-2.amazonaws.com/Icons/close_icon.svg);
   background-color: transparent;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 15px;
   border: none;
 `;
 
