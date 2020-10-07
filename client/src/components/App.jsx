@@ -51,7 +51,6 @@ class App extends React.Component {
       },
     })
       .then((response) => {
-        console.log(response.data);
         this.setState({
           ableToRender: true,
           restaurant_name: response.data[0].name,

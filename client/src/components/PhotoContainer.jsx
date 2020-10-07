@@ -23,10 +23,9 @@ const PhotoGrid = styled.div`
 const InnerGrid = styled.div`
   grid-area: 1 / 3 / 3 / 4 ;
   display: grid;
-  height: 295px;
+  height: 301.5px;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(3, 33.333%);
-  grid-gap: 2px;
   column-gap: 2px;
   justify-items: center;
   align-items: center;
@@ -48,22 +47,30 @@ const PhotoThree = styled(Photo)`
 `;
 const PhotoFour = styled(Photo)`
 grid-area: 1 / 1 / 2 / 2 ;
+padding-bottom: 1px;
 `;
 const PhotoFive = styled(Photo)`
   grid-area: 2 / 1 / 3 / 2 ;
+  padding-top: 1px;
+  padding-bottom: 1px;
 `;
 const PhotoSix = styled(Photo)`
 grid-area: 3 / 1 / 4 / 2 ;
+padding-top: 1px;
 `;
 const PhotoSeven = styled(Photo)`
 grid-area: 1 / 2 / 2 / 3 ;
+padding-bottom: 1px;
 `;
 const PhotoEight = styled(Photo)`
 grid-area: 2 / 2 / 3 / 3 ;
+padding-top: 1px;
+padding-bottom: 1px;
 `;
 const PhotoNine = styled(Photo)`
   grid-area: 3 / 2 / 4 / 3 ;
   background-color: black;
+  padding-top: 1px;
 `;
 
 const Image = styled.img`
