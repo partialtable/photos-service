@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 
-mongoose.connect('mongodb://localhost/photo-gallery');
+mongoose.connect('mongodb://localhost:27017/photo-gallery', {useNewUrlParser: true});
 
 const db = mongoose.connection;
 

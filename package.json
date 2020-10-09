@@ -9,6 +9,7 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
+    "start-dev": "node server/server.js",
     "test": "jest",
     "seed": "node database/index.js",
     "test:coverage": "jest --verbose --coverage"
