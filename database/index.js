@@ -4,7 +4,9 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 
-mongoose.connect('mongodb://localhost:27017/photo-gallery', {useNewUrlParser: true});
+// let isSeeded = false;
+
+mongoose.connect('mongodb://localhost:27017/photo-gallery');
 
 const db = mongoose.connection;
 
@@ -93,13 +95,15 @@ const seedData = () => {
       console.log(err);
     } else {
       console.log('Successfully inserted Restaurants into MongoDB');
+      // isSeeded = true;
     }
   });
 };
 
-// seedData();
+// if (!isSeeded) seedData();
 
 const gatherPhotos = (restaurantId) => {
+  console.log('made it to gatherPhotos fn');
   return RestaurantModel.find({ id: restaurantId }).exec();
 };
 

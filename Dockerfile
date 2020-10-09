@@ -1,13 +1,13 @@
 FROM node:12.16.1
 
-RUN mkdir -p /src/app
+RUN mkdir -p /app
 
-WORKDIR /src/app
+WORKDIR /app
 
-COPY . /src/app
+COPY . /app
 
 RUN npm install
 
 EXPOSE 3003
 
-CMD ["npm", "run", "start-dev"]
+CMD ["node", "server/server.js"]
