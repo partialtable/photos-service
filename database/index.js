@@ -3,8 +3,6 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 
-// let isSeeded = false;
-
 mongoose.connect('mongodb://localhost:27017/photo-gallery');
 
 const db = mongoose.connection;
@@ -22,8 +20,6 @@ const RestaurantSchema = mongoose.Schema({
 
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
 
-
-// seedData();
 
 const gatherPhotos = (restaurantId) => {
   return RestaurantModel.find({ id: restaurantId }).exec();
