@@ -23,8 +23,6 @@ const RestaurantSchema = mongoose.Schema({
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
 
 
-// seedData();
-
 const gatherPhotos = (restaurantId) => {
   return RestaurantModel.find({ id: restaurantId }).exec();
 };
