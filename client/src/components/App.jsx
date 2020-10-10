@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/destructuring-assignment */
@@ -51,7 +52,6 @@ class App extends React.Component {
       },
     })
       .then((response) => {
-        console.log('response data received', response.data);
         this.setState({
           ableToRender: true,
           restaurant_name: response.data[0].name,

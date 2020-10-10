@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-console */
@@ -19,7 +20,6 @@ const RestaurantSchema = mongoose.Schema({
 }, { versionKey: false });
 
 const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
-
 
 const gatherPhotos = (restaurantId) => {
   return RestaurantModel.find({ id: restaurantId }).exec();
