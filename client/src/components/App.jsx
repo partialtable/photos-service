@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable radix */
+/* eslint-disable linebreak-style */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/destructuring-assignment */
@@ -52,10 +54,16 @@ class App extends React.Component {
       },
     })
       .then((response) => {
+        let id;
+        if (window.location.href.split('/')[3] === '') {
+          id = 1;
+        } else {
+          id = parseInt(window.location.href.split('?')[1]);
+        }
         this.setState({
           ableToRender: true,
           restaurant_name: response.data[0].name,
-          restaurant_id: response.data[0].id,
+          restaurant_id: id,
           photos: response.data[0].photos,
         });
       })
