@@ -13,7 +13,7 @@ PUT    : /api/restaurants/:restaurantId/photoUrl/:photoUrl
 PATCH  : /api/restaurants/:restaurantId/photoUrl/:photoUrl
 DELETE : /api/restaurants/:restaurantId/photoUrl/:photoUrl
 
-Cassandra:
+ArangoDB:
 GET    : /api/restaurants/:restaurantId
 POST   : /api/restuarants/:restaurantId/photos/:photoName
 PUT    : /api/restaurants/:restaurantId/photos/:photoName
