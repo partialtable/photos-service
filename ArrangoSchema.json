@@ -1,0 +1,101 @@
+{
+  "title": "Restaurant List",
+  "restaurants": [
+  	{
+      "restaurantId": 1,
+      "name": "McDonalds",
+      "city": "san jose",
+      "state": "california",
+      "country": "United States",
+      "stars": 4,
+      "cuisine": "American",
+      "photos": [
+        {
+          "photo_id": 1,
+          "description": "A large coke",
+          "url": "http:localhost:photos",
+          "category": ["all","drinks"],
+          "userFullName": "Tony Tran",
+          "username": "tonyT",
+          "userProfileImg": "avatarPic"
+        },
+        {
+          "id": 2,
+          "description": "Big Mac",
+          "url": "http:localhost:bigMac",
+          "category": ["all","food"],
+          "users": ["Albert Chan", "abcTran", "avatarPic"]
+        },
+        {
+          "id": 3,
+          "description": "Chicken Nuggets",
+          "url": "http:localhost:nuggests",
+          "category": ["all","food"],
+          "users": ["Jamie Ca", "JC", "avatarPic"]
+        }
+      ]
+    },
+    {
+      "restaurantId": 2,
+      "name": "Burger King",
+      "photos": [
+        {
+          "id": 1,
+          "description": "Fries",
+          "url": "http:localhost:fries",
+          "category": ["all","food"],
+          "users": ["To Ng", "Tnguy", "avatarPic"]
+        },
+        {
+          "id": 2,
+          "description": "Onion Rings",
+          "url": "http:localhost:rings",
+          "category": ["all","food"],
+          "users": ["Mary Rau", "Marriedr", "avatarPic"]
+        },
+        {
+          "id": 3,
+          "description": "Milkshake",
+          "url": "http:localhost:shake",
+          "category": ["all","drinks"],
+          "users": ["Tony Tran", "tonyT", "avatarPic"]
+        }
+      ]
+    }
+  ]
+}
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string" },
+    "restaurants": { "type": "array", "items": [{ "type": "object", "properties": {
+            "restaurantId": { "type": "integer" },
+            "name": { "type": "string" },
+            "city": { "type": "string" },
+            "state": { "type": "string" },
+            "country": { "type": "string" },
+            "stars": { "type": "integer" },
+            "cuisine": { "type": "string" },
+            "photos": { "type": "array", "items": [{ "type": "object", "properties": {
+                    "photo_id": { "type": "integer" },
+                    "description": { "type": "string" },
+                    "url": { "type": "string" },
+                    "category": { "type": "string" },
+                    "userFullName": { "type": "string" },
+                    "username": { "type": "string" },
+                    "userProfileImg": { "type": "string" }
+                   },
+                  "required": [ "id", "description", "url", "category", "userFullName", "username", "userProfileImg"]
+                }
+              ]
+            }
+          },
+          "required": ["restaurantId", "name", "city", "state", "country", "stars", "cuisine", "photos"]
+        }
+      ]
+    }
+  },
+  "required": ["title", "restaurants"]
+}
