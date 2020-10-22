@@ -25,7 +25,7 @@ CREATE TABLE users (
 
 CREATE TABLE category (
   id SERIAL PRIMARY KEY,
-  categories VARCHAR(30) UNIQUE -- categories of photos (menu, drinks, pasta, soups)
+  categories VARCHAR(30) -- categories of photos (menu, drinks, pasta, soups)
 );
 
 CREATE TABLE photos (
@@ -91,3 +91,48 @@ COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/th
 COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable3.csv' DELIMITER ',' CSV header;
 COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable4.csv' DELIMITER ',' CSV header;
 COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable5.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable6.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable7.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable8.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable9.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable10.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable11.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable12.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable13.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable14.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable15.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable16.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable17.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable18.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable19.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable20.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable21.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable22.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable23.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable24.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable25.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable26.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable27.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable28.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable29.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable30.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable31.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable32.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable33.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable34.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable35.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable36.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable37.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable38.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable39.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable40.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable41.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable42.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable43.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable44.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable45.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable46.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable47.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable48.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable49.csv' DELIMITER ',' CSV header;
+COPY photos (url, description, userid, categoryid, restaurantid) FROM '/Users/theo/Desktop/HR/SDC/photos-carousel-service/database/postgreSQL/CSV/photosTableCsv/photosTable50.csv' DELIMITER ',' CSV header;
