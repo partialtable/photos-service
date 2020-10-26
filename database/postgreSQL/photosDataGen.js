@@ -18,7 +18,7 @@ const csvList = (start, end) => {
 };
 
 const csvWriter = writer({
-  path: './photosTable5.csv',
+  path: './photosTable52.csv',
   header: [
     { id: 'url', title: 'url' },
     { id: 'description', title: 'description' },
