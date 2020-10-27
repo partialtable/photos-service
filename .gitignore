@@ -24,11 +24,11 @@ coverage
 build/
 dist/
 .env/
-newrelic.js
 newrelic_agent.log
 # aws access keys file
 aws-credentials.json
 
+newrelic.js
 bundle.js
 
 CSV
